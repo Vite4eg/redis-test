@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+  redis:
+    image: 'redis:4'
+    ports:
+      - 6379:6379
+    networks:
+      - project
+
+
+  nginx:
+    build: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./www:/var/www
+    networks:
+      - project
+
+
+  nodejs:
+    build:
+      context: ./nodejs
+    ports:
+      - 3000:3000
+    networks:
+      - project
+    depends_on:
+      - redis
+    links:
+      - redis
+
+
+
+networks:
+  project:
+    driver: bridge

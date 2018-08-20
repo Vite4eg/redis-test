@@ -1,0 +1,15 @@
+{
+  "name": "js_proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ws_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^2.8.0",
+    "ws": "^6.0.0"
+  }
+}

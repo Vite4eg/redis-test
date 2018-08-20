@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/script.js" defer></script>
+</head>
+<body>
+<div class="chat" id="app">
+    <div>
+        <h1>Веб сокеты</h1>
+    </div>
+    <div>
+        <h2>Отправка сообщения</h2>
+        <form v-on:submit.prevent="submit">
+            <input v-model="inputMessage" name="message" autofocus>
+            <button>Отправить</button>
+        </form>
+    </div>
+    <div>
+        <h2>Сообщения</h2>
+        <ul class="chat__messages">
+            <li v-for="(item) in messages" class="chat__message">
+                {{ item.message }}
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
